@@ -1,6 +1,6 @@
 ### Python template
 /.idea
-credentials
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -28,7 +28,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-credentials
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
