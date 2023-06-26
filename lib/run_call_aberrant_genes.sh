@@ -50,21 +50,21 @@ CMD_1="Rscript $SCRIPTPATH/src/subsample_V1.R -i $input -o "${output}/${project}
 
 $CMD_1
 
-#echo "starting normalizer with input ${output}/${project}_subsampled_${target}.csv removing previous normalized.txt"
-#
-#node --experimental-modules $SCRIPTPATH/src/normalizer.mjs "${output}/${project}_subsampled_${target}.csv"
-#
-#
-#echo "Scaling and transforming data..."
-#CMD_2="Rscript $SCRIPTPATH/src/scale_and_transform_V1.R --input=normalized.txt -o "${output}/${project}_normalized.csv""
-##echo "${CMD_2}"
-#$CMD_2
-#
-#echo "Detecting aberrantly expressed genes..."
-#CMD_3="Rscript $SCRIPTPATH/src/find_abberants_V1_01.R -i "${output}/${project}_normalized.csv" -o $output -p $project"
-##echo "${CMD_3}"
-#$CMD_3
-#
+echo "starting normalizer with input ${output}/${project}_subsampled_${target}.csv removing previous normalized.txt"
+
+node --experimental-modules $SCRIPTPATH/src/normalizer.mjs "/app/${project}_subsampled_${target}.csv"
+
+
+echo "Scaling and transforming data..."
+CMD_2="Rscript $SCRIPTPATH/src/scale_and_transform_V1.R --input=/app/normalized.txt -o "${output}/${project}_normalized.csv""
+
+$CMD_2
+
+echo "Detecting aberrantly expressed genes..."
+CMD_3="Rscript $SCRIPTPATH/src/find_abberants_V1_01.R -i /app/${project}_normalized.csv -o $output -p $project"
+
+$CMD_3
+
 ## Move normalized.txt to the output directory (so it doesn't get overwritten by the next run)
 #if [ -f "normalized.txt" ] && [ ! -f "${output}/${project}_normalized.txt" ]
 #then

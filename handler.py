@@ -14,7 +14,7 @@ def main():
     send_status("started", subfolder)
     basename = os.path.basename(file_name_prefix)
     nameroot = basename.split('.')[0]
-    stats = "160000000"
+    stats = "5000000"
     print(f"starting program with inputs {file_name_prefix}")
     copy_s3_input(file_name_prefix)
 

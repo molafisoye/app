@@ -15,10 +15,8 @@ suppressWarnings(library(plyr))
 suppressWarnings(library(optparse))
 
 
-main <- function(gene_count_inputs_path, output_path, project_id){
-  cases <- read.csv(gene_count_inputs_path, header = TRUE,stringsAsFactors = FALSE, check.names = FALSE)
-  
-  cases = cases[!duplicated(cases[,1])&is.na(cases[,1])==F,]
+main <- function(gene_count_inputs_path, output_path, project_id){b hj p0-[]
+  cases <- read.csv(gene_count_inputs_path, header = TRUE,strin`l,,ml n, `
   rownames(cases) <- cases[,1]
   cases = cases[,-1]
   
