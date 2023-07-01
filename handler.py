@@ -11,14 +11,14 @@ def main():
     start = time.time()
     file_name_prefix = os.environ.get('FILENAME')
     subfolder = os.environ.get('SUBFOLDER')
+    target = os.environ.get('TARGET')
     send_status("started", subfolder)
     basename = os.path.basename(file_name_prefix)
-    nameroot = basename.split('.')[0]
-    stats = "5000000"
+    nameroot = basename.split('.')[0]˚
     print(f"starting program with inputs {file_name_prefix}")
     copy_s3_input(file_name_prefix)
 
-    command = ["bash lib/run_call_aberrant_genes.sh", "-i", file_name_prefix, "-o", ".", "-p", nameroot, "-t", stats]
+    command = ["bash lib/run_call_aberrant_genes.sh", "-i", file_name_prefix, "-o", ".", "-p", nameroot, "-t", target]
     try_run(command)
 
     subsampled_output = f"{nameroot}_subsampled_{stats}"

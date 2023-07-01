@@ -60,10 +60,10 @@ CMD_2="Rscript $SCRIPTPATH/src/scale_and_transform_V1.R --input=/app/normalized.
 
 $CMD_2
 
-echo "Detecting aberrantly expressed genes..."
-CMD_3="Rscript $SCRIPTPATH/src/find_abberants_V1_01.R -i /app/${project}_normalized.csv -o $output -p $project"
-
-$CMD_3
+#echo "Detecting aberrantly expressed genes..."
+#CMD_3="Rscript $SCRIPTPATH/src/find_abberants_V1_01.R -i /app/${project}_normalized.csv -o $output -p $project"
+#
+#$CMD_3
 
 ## Move normalized.txt to the output directory (so it doesn't get overwritten by the next run)
 #if [ -f "normalized.txt" ] && [ ! -f "${output}/${project}_normalized.txt" ]
